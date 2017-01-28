@@ -14,7 +14,7 @@ REBAR3 = $(CURDIR)/rebar3
 endif
 
 all: $(REBAR3)
-	@$(REBAR3) do clean, compile, eunit, dialyzer
+	@$(REBAR3) do clean, compile
 
 rel: all
 	@$(REBAR3) release
