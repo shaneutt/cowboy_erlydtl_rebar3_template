@@ -1,0 +1,36 @@
+%%-*- mode: erlang -*-
+
+{description, "Generates an empty Cowboy/ErlyDTL application"}.
+{variables, [
+    {name, "ceskel", "name of the application to build"}
+]}.
+
+%% repo files
+
+{template, "Makefile", "{{name}}/Makefile"}.
+{template, "rebar.config", "{{name}}/rebar.config"}.
+
+%% code templates
+
+{template, "src/_.app.src", "{{name}}/src/{{name}}.app.src"}.
+{template, "src/_app.erl", "{{name}}/src/{{name}}_app.erl"}.
+{template, "src/_sup.erl", "{{name}}/src/{{name}}_sup.erl"}.
+{template, "src/_.erl", "{{name}}/src/{{name}}.erl"}.
+{template, "src/_default_router.erl", "{{name}}/src/{{name}}_default_router.erl"}.
+
+%% config
+
+{template, "config/sys.config", "{{name}}/config/sys.config"}.
+{template, "config/vm.args", "{{name}}/config/vm.args"}.
+
+%% priv
+
+{dir, "{{name}}/priv/www/"}.
+{dir, "{{name}}/priv/static/"}.
+{dir, "{{name}}/priv/templates/"}.
+{dir, "{{name}}/priv/templates-compiled/"}.
+{template, "priv/templates/index.dtl", "{{name}}/priv/templates/index.dtl"}.
+
+%% git
+{template, "git/dot.gitignore", "{{name}}/.gitignore"}.
+{template, "git/dtl.gitignore", "{{name}}/priv/templates-compiled/.gitignore"}.

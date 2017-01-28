@@ -1,4 +1,5 @@
 .rebar3
+_*
 .eunit
 *.o
 *.beam
@@ -13,4 +14,4 @@ erl_crash.dump
 logs
 _build
 .idea
-rebar3*
+rebar3.crashdump

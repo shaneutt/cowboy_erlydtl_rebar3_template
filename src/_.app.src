@@ -1,0 +1,21 @@
+%%-*- mode: erlang -*-
+
+{application, {{name}}, [
+    {description, "{{name}}"},
+    {vsn, "1"},
+    {modules, []},
+    {registered, []},
+    {applications, [
+        kernel,
+        stdlib,
+        cowboy,
+        erlydtl,
+        jsx
+    ]},
+    {mod, {{{name}}_app, []}},
+    {env, [
+        {ip_address, {127,0,0,1}},
+        {port, 8080},
+        {workers, 25}
+    ]}
+]}.
