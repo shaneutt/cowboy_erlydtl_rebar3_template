@@ -3,17 +3,14 @@
 
 -define(PRIVDIR, code:priv_dir(?MODULE)).
 -define(COMPILE_OPTS, [{out_dir, ?PRIVDIR ++ "/templates-compiled/"}]).
--define(TEMPLATES, [
-    %% add templates handlers here
-    {"/templates/index.dtl", {{name}}_templates_index}
-]).
 
 http_start() ->
     do_erlydtl_start(),
     do_cowboy_start().
 
 do_erlydtl_start() ->
-    [{ok, _} = erlydtl:compile_file(?PRIVDIR ++ File, Mod, ?COMPILE_OPTS) || {File, Mod} <- ?TEMPLATES].
+    Templates = application:get_env(?MODULE, erlydtl_templates),
+    [{ok, _} = erlydtl:compile_file(?PRIVDIR ++ File, Mod, ?COMPILE_OPTS) || {File, Mod} <- Templates].
 
 do_cowboy_start() ->
     {Ip, Port, Workers, Dispatch} = do_cowboy_configure(),

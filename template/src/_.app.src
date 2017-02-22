@@ -1,5 +1,4 @@
 %%-*- mode: erlang -*-
-
 {application, {{name}}, [
     {description, "{{name}}"},
     {vsn, "1"},
