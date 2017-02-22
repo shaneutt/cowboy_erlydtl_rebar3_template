@@ -9,7 +9,7 @@ http_start() ->
     do_cowboy_start().
 
 do_erlydtl_start() ->
-    Templates = application:get_env(?MODULE, erlydtl_templates),
+    {ok, Templates} = application:get_env(?MODULE, erlydtl_templates),
     [{ok, _} = erlydtl:compile_file(?PRIVDIR ++ File, Mod, ?COMPILE_OPTS) || {File, Mod} <- Templates].
 
 do_cowboy_start() ->
