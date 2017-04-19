@@ -8,8 +8,9 @@
 %% base
 
 {template, "template/dot.gitignore", "{{name}}/.gitignore"}.
-{template, "template/dtl.gitignore", "{{name}}/priv/templates-compiled/.gitignore"}.
+{template, "template/dot.gitkeep", "{{name}}/priv/templates-compiled/.gitkeep"}.
 {template, "template/Makefile", "{{name}}/Makefile"}.
+{template, "template/rebar3.mk", "{{name}}/rebar3.mk"}.
 {template, "template/rebar.config", "{{name}}/rebar.config"}.
 
 %% code templates
